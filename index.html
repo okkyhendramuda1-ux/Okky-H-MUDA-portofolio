@@ -20,7 +20,6 @@
   </style>
  
 <style>
-<style>
 .section-bg {
   position: relative;
   overflow: hidden;
@@ -154,8 +153,8 @@
   box-shadow:
   0 0 20px rgba(59,130,246,0.6),
 0 0 40px rgba(37,99,235,0.5),
-0 0 80px rgba(29,78,216,0.3);
-  0 0 120px rgba(255,80,0,0.2)
+0 0 80px rgba(29,78,216,0.3),
+0 0 120px rgba(255,80,0,0.2);
   
 }
 
@@ -244,7 +243,75 @@
 svg:hover {
   filter: drop-shadow(0 0 10px rgba(59,130,246,0.8));
 }
+/* TESTIMONI */
+.testimonial-container{
+    overflow:hidden;
+}
+
+.testimonial-track{
+    display:flex;
+    gap:28px;
+    width:max-content;
+
+    /* Kecepatan scroll */
+    animation:scroll 100s linear infinite;
+
+    padding:10px 0;
+}
+
+@keyframes scroll{
+    0%{transform:translateX(0)}
+    100%{transform:translateX(-50%)}
+}
+
+/* Hover pause */
+.testimonial-container:hover .testimonial-track{
+    animation-play-state:paused;
+}
+#imageModal{
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+
+    background:rgba(0,0,0,.8);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+}
+
+#modalImg{
+    max-width:95%;
+    max-height:90%;
+    border-radius:12px;
+    box-shadow:0 15px 40px rgba(0,0,0,.5);
+}
+
+#closeModal{
+    position:absolute;
+    top:25px;
+    right:30px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+}
+input,
+textarea,
+select{
+    color:#111827 !important;
+}
+
+input::placeholder,
+textarea::placeholder{
+    color:#9ca3af;
+}
 </style>
+
 
 </head>
 <body class="bg-[#0b1c26] text-white font-sans scroll-smooth">
@@ -356,7 +423,7 @@ animate();
           </span>
         </h1>
         <p class="text-lg sm:text-xl text-gray-300 mb-4">
-          Service Operations | Customer Experience | Data-Driven Leader
+          Service Center Manager | Operations Manager | Customer Experience | Business Executive | Quality Control | Data-Driven Leader
         </p>
 
         <p class="text-gray-400 italic mb-8 max-w-lg mx-auto md:mx-0">
@@ -366,16 +433,20 @@ animate();
         <!-- STATS -->
         <div class="flex justify-center md:justify-start gap-8 mt-6 text-center">
           <div>
-            <p class="text-2xl font-bold text-blue-400">7+</p>
+            <p class="text-2xl font-bold text-blue-400">10+</p>
             <p class="text-sm text-gray-400">Years Experience</p>
           </div>
           <div>
             <p class="text-2xl font-bold text-blue-400">2000+</p>
-            <p class="text-sm text-gray-400">Claims / Month</p>
+            <p class="text-sm text-gray-400">Claims Solved / Month</p>
           </div>
           <div>
             <p class="text-2xl font-bold text-blue-400">80+</p>
             <p class="text-sm text-gray-400">Service Centers</p>
+          </div>
+           <div>
+            <p class="text-2xl font-bold text-blue-400">>92%</p>
+            <p class="text-sm text-gray-400">Score NPS</p>
           </div>
         </div>
 
@@ -431,6 +502,9 @@ animate();
   <p class="text-gray-300 leading-relaxed">
     Saya adalah profesional di bidang service operations dan customer experience dengan pengalaman lebih dari 7 tahun dalam mengelola operasional service center, meningkatkan efisiensi, dan memastikan kualitas layanan.
   </p>
+  <br>
+  <p class="text-blue-400 italic">
+    I am a service operations and customer experience professional with over seven years of experience managing service center operations, improving efficiency, and ensuring service quality.      </p>
 </section>
 
 <section id="resume" class="py-20 bg-[#0f2a36]" data-aos="fade-up">
@@ -465,10 +539,18 @@ animate();
       <div class="space-y-6">
         <div class="border-l-2 border-blue-400 pl-6">
           <h4 class="font-semibold">Manager Service Center</h4>
-          <p class="text-gray-400 text-sm">PT Bolde Inovasi Global | 2023</p>
+          <p class="text-gray-400 text-sm">PT Bolde Inovasi Global | 2023 - 2024</p>
           <p class="text-gray-300 text-sm mt-2">
             Led service center operations, implemented CRM systems, and improved customer satisfaction through data-driven strategies.
           </p>
+        </div>
+
+      <div class="space-y-6">
+        <div class="border-l-2 border-blue-400 pl-6">
+          <h4 class="font-semibold">Quality Control</h4>
+          <p class="text-gray-400 text-sm">PT Administrasi Medika  | 2023</p>
+          <p class="text-gray-300 text-sm mt-2">
+            Quality Control for HC Operation at Admedika and report to Senior Manager      </p>
         </div>
 
         <div class="border-l-2 border-blue-400 pl-6">
@@ -478,9 +560,17 @@ animate();
             Managed validation of thousands of service claims and developed performance dashboards to monitor operations.
           </p>
         </div>
+
+        <div class="border-l-2 border-blue-400 pl-6">
+          <h4 class="font-semibold">Internship - Technical Support Specialist</h4>
+          <p class="text-gray-400 text-sm">PT Geo Dipa Energi | 2009</p>
+          <p class="text-gray-300 text-sm mt-2">
+Perform repairs and maintenance on electrical panels in power generation areas 28,29, 30, and 33.          </p>
+        </div>
+
       </div>
     </div>
-
+<br>
     <!-- EDUCATION -->
     <div class="section-bg bg-education">
       <h3 class="text-2xl font-semibold mb-6 text-blue-400">Education</h3>
@@ -571,6 +661,124 @@ animate();
       <p class="text-blue-400 text-xs">Boosted customer experience & retention</p>
     </div>
 </section>
+<!-- INFO TERKAIT AFTERSALES -->
+<section class="py-24 bg-gradient-to-br from-cyan-300 via-blue-700 to-black relative overflow-hidden">
+
+<div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top,_#3b82f6,_transparent_60%)]"></div>
+
+<div class="relative max-w-7xl mx-auto px-6">
+
+<h3 class="text-3xl md:text-4xl font-bold text-center mb-14 text-white tracking-wide">
+
+🚗 Tips & Insight About After Sales
+       
+</h3>
+ 
+<div class="testimonial-container">
+<div class="testimonial-track"></div>
+</div>
+
+</div>
+
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+const insights = [
+{
+judul: " Peran After Sales",
+isi: "Insight tentang Peran After Sales dan implementasinya. Bagaimana strategi after sales di perusahaan Anda? Yuk, berbagi pengalaman di kolom komentar. #AfterSales #Leadership #ServiceExcellence",
+gambar: "https://www.image2url.com/r2/default/images/1784207734811-4be0ae95-9c9e-4431-929c-5b7d8ed4ce15.jpeg"
+},
+{
+judul: " Lean Service",
+isi: "Insight tentang Lean Service dan implementasinya. Follow akun ini untuk mendapatkan insight after sales setiap hari. #AfterSales #Leanservice #ServiceExcellence",
+gambar: "https://www.image2url.com/r2/default/images/1784206357172-39e398b8-f614-4d89-8028-f1f17ee92fbf.jpeg"
+},
+{
+judul: " Kaizen",
+isi: "Insight tentang Kaizen dan implementasinya. Mana yang lebih sulit: meningkatkan penjualan atau mempertahankan pelanggan? #AfterSales #Kaizen #ServiceExcellence",
+gambar: "https://www.image2url.com/r2/default/images/1784206644768-6dbe3d58-0ea5-4d4d-99ef-39e81d4cee91.jpeg"
+},
+{
+judul: " Fishbone",
+isi: "Insight tentang Fishbone dan implementasinya. Bagikan pengalaman Anda dalam mengelola service center multi-cabang. #AfterSales #Fishbone #ServiceExcellence",
+gambar: "https://www.image2url.com/r2/default/images/1784206740949-bd6a4f85-8134-45c7-9001-1e819fbf9d1d.jpeg"
+},
+{
+judul: " Pareto",
+isi: "Insight tentang Pareto dan implementasinya. Menurut Anda, apa penyebab terbesar tingginya biaya service? #AfterSales #Pareto #ServiceExcellence",
+gambar: "https://www.image2url.com/r2/default/images/1784206552668-95abe9b8-2722-40ee-8550-b4948c31689a.jpeg"
+},
+{
+judul: " Field Service",
+isi: "Insight tentang Field Service dan implementasinya. Apa tantangan terbesar tim teknisi saat ini? Mari berdiskusi. #AfterSales #Fieldservice #ServiceExcellence",
+gambar: "https://www.image2url.com/r2/default/images/1784207019120-4ea1086b-9fb0-404b-ab19-396eb6f03ed7.jpeg"
+},
+{
+judul: " Customer Experience",
+isi: "Insight tentang Customer Experience dan implementasinya. Jika konten ini bermanfaat, bagikan kepada tim service Anda. #AfterSales #customerexperience #ServiceExcellence",
+gambar: "https://www.image2url.com/r2/default/images/1784207875199-579ef481-84ce-4fde-8cf7-164e9d29508b.jpeg"
+},
+{
+judul: " VOC",
+isi: "Insight tentang VOC dan implementasinya. Tulis SETUJU jika Anda percaya layanan lebih penting daripada harga. #AfterSales #VOC #ServiceExcellence",
+gambar: "https://www.image2url.com/r2/default/images/1784207564313-9da747e3-3c6a-46ba-b7a7-7e28b4fb7180.jpeg"
+},
+{
+judul: " 5 Why",
+isi: "Insight tentang 5 Why dan implementasinya. Simpan postingan ini untuk menjadi checklist evaluasi tim Anda. #AfterSales #5why #ServiceExcellence",
+gambar: "https://www.image2url.com/r2/default/images/1784206834667-aa96fb42-5cde-4ccd-b93c-48c4fb7b6efc.jpeg"
+},
+{
+judul: " Service Profit",
+isi: "Insight tentang Service Profit dan implementasinya. Apakah Anda setuju bahwa kecepatan respon adalah kunci after sales? #AfterSales #serviceprofit #ServiceExcellence",
+gambar: "https://www.image2url.com/r2/default/images/1784206929926-2ed92fe1-0d24-4da3-b92d-e363405d6fda.jpeg"
+}
+];
+
+const container = document.querySelector(".testimonial-track");
+
+if(container){
+
+insights.forEach((item)=>{
+container.innerHTML += cardHTML(item);
+});
+
+// DUPLIKASI agar scroll mulus
+insights.forEach((item)=>{
+container.innerHTML += cardHTML(item);
+});
+
+function cardHTML(item){
+return `
+<div class="bg-white/95 backdrop-blur rounded-2xl shadow-xl min-w-[300px] max-w-[300px] p-6
+hover:-translate-y-3 hover:shadow-[0_10px_40px_rgba(0,0,0,0.25)]
+transition duration-500">
+
+<div class="w-full aspect-square bg-white rounded-xl mb-3 flex items-center justify-center overflow-hidden">
+
+<img src="${item.gambar}" 
+class="w-60 max-h-60 object-contain cursor-pointer insight-img">
+</div>
+
+<h4 class="font-bold text-lg mb-2 text-gray-800">
+${item.judul}
+</h4>
+
+<p class="text-gray-600 text-sm">
+${item.isi}
+</p>
+
+</div>
+`;
+}
+}
+
+});
+
+</script>
 <section id="portfolio" class="py-20 px-5 md:px-10 bg-[#0f2a36] max-w-6xl mx-auto" data-aos="fade-up">
     <h2 class="text-3xl font-bold mb-10">
       <div class="flex justify-left mb-6">
@@ -595,6 +803,7 @@ animate();
       <img src="https://image2url.com/r2/default/images/1774825633365-36c531d9-967e-49ad-a5c4-40246a9b258c.png">
     </div>
 </div>
+</section>
 </section>
 
 <!-- PORTFOLIO -->
@@ -768,6 +977,44 @@ Personal Excellence
   </div>
 </section>
 <br>
+<!-- BOOKING -->
+<section id="booking" class="booking-section py-16 bg-gradient-to-br from-blue-600 to-blue-900">
+<div class="max-w-xl mx-auto bg-gradient-to-b from-blue-900 via-blue-800 to-black text-center p-8 rounded-2xl shadow-xl">
+
+<section class="py-24 bg-gradient-to-b from-blue-900 via-blue-800 to-black text-center">
+<h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+Mari Terhubung</h2>
+
+<p class="text-blue-200 mb-10">
+Silakan isi formulir berikut. Saya akan merespons setiap permintaan dengan profesional dan tepat waktu.</p>
+<div class="cta-arrow mb-6"></div>
+
+<form id="bookingForm" class="space-y-4">
+
+<input id="nama" placeholder="Nama" class="w-full border p-3 rounded-lg">
+<input id="wa" placeholder="Nama Perusahaan" class="w-full border p-3 rounded-lg">
+<input id="mobil" placeholder="Posisi Jabatan" class="w-full border p-3 rounded-lg">
+
+<select id="layanan" class="w-full border p-3 rounded-lg">
+<option>📝 Menawarkan lowongan pekerjaan</option>
+<option>💼 Mengundang interview</option>
+<option>💡 Menawarkan posisi baru yang lebih sesuai</option>
+<option>📑 Memberikan offering letter</option>
+<option>📦 Penawaran kerja sama strategis</option>
+<option>🏢 Kerja Sama Perusahaan</option>
+</select>
+
+<textarea id="pesan" placeholder="Sampaikan maksud dan tujuan disini, lampiran foto, berkas dapat dikirim melalui Wa chat di nomor ini" class="w-full border p-3 rounded-lg"></textarea>
+
+<button class="w-full bg-cyan-500 text-white py-3 rounded-lg">
+Submit via WhatsApp
+</button>
+
+</form>
+</section>
+</section>
+
+<br>
 <!-- CONTACT -->
 <section id="contact" class="py-20 bg-[#0f2a36] text-center" data-aos="fade-up">
   <h2 class="text-3xl font-bold mb-6">Contact</h2>
@@ -779,7 +1026,7 @@ Process optimization mindset  |
 Customer-centric approach |
 Continuous improvement</p>
   <p>Email: okkyhendra.muda2@gmail.com</p>
-  <a href="https://wa.me/6281211518369?text=Halo%20saya%20dari%20Perusahaan%20....%20berminat%20untuk%20melakukan%20interview"
+  <a href="https://wa.me/6281211518369?text=Salam%20sejahtera,%20saya%20dari%20Perusahaan:%20....%20bermaksud%20untuk%20melakukan%20"
   target="_blank"
   class="mt-6 inline-block bg-green-500 px-6 py-3 rounded-full">
   Chat WhatsApp
@@ -787,7 +1034,7 @@ Continuous improvement</p>
 </section>
 <br>
 <footer class="text-center py-6 text-gray-500">
-  � 2026 Okky Hendra Muda
+  © 2026 Okky Hendra Muda
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -817,5 +1064,94 @@ menuBtn.addEventListener('click', () => {
   menu.classList.toggle('hidden');
 });
 </script>
+<!-- IMAGE MODAL -->
+<div id="imageModal">
+
+    <span id="closeModal">&times;</span>
+
+    <img id="modalImg">
+
+</div>
+<script>
+
+document.addEventListener("DOMContentLoaded",function(){
+
+const modal=document.getElementById("imageModal");
+const modalImg=document.getElementById("modalImg");
+const close=document.getElementById("closeModal");
+
+document.addEventListener("click",function(e){
+
+if(e.target.classList.contains("insight-img")){
+
+modal.style.display="flex";
+
+modalImg.src=e.target.src;
+
+}
+
+});
+
+close.onclick=function(){
+
+modal.style.display="none";
+
+}
+
+modal.onclick=function(e){
+
+if(e.target===modal){
+
+modal.style.display="none";
+
+}
+
+}
+
+});
+
+</script>
+<!-- SCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+document.getElementById("bookingForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const nama = document.getElementById("nama").value.trim();
+    const perusahaan = document.getElementById("wa").value.trim();
+    const jabatan = document.getElementById("mobil").value.trim();
+    const layanan = document.getElementById("layanan").value;
+    const isiPesan = document.getElementById("pesan").value.trim();
+
+    if(!nama || !perusahaan || !jabatan){
+        alert("Harap lengkapi data terlebih dahulu.");
+        return;
+    }
+
+    const waText = `Halo Okky Hendra Muda,
+
+Saya bermaksud menghubungi Anda.
+
+Nama         : ${nama}
+
+Perusahaan   : ${perusahaan}
+
+Posisi       : ${jabatan}
+
+Subject      : ${layanan}
+
+Pesan        :
+${isiPesan}`;
+
+    window.open(
+        `https://wa.me/6281211518369?text=${encodeURIComponent(waText)}`,
+        "_blank"
+    );
+
+});
+</script>
+
 </body>
 </html>\
